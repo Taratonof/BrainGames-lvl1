@@ -5,4 +5,5 @@
 
 - <a href="https://travis-ci.org/Taratonof/frontend-project-lvl1"><img src="https://travis-ci.org/Taratonof/frontend-project-lvl1.svg?branch=master" /></a>
 
-- <link rel="alternate" type="application/x-asciicast" href="/home/artur/BrainGames/asc.cast">
+- asciinema: https://asciinema.org/a/xH4NnQhWEmJgIzvtdt9NQUQ1o
+
