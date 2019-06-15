@@ -5,5 +5,7 @@
 
 - <a href="https://travis-ci.org/Taratonof/frontend-project-lvl1"><img src="https://travis-ci.org/Taratonof/frontend-project-lvl1.svg?branch=master" /></a>
 
-- asciinema: https://asciinema.org/a/xH4NnQhWEmJgIzvtdt9NQUQ1o
+- brain-even asciinema: https://asciinema.org/a/xH4NnQhWEmJgIzvtdt9NQUQ1o
+- brain-calc asciinema: https://asciinema.org/a/XZEOk1kGtFlhvRrzQLAphG85Y
+
 
