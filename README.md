@@ -7,5 +7,7 @@
 
 - brain-even asciinema: https://asciinema.org/a/xH4NnQhWEmJgIzvtdt9NQUQ1o
 - brain-calc asciinema: https://asciinema.org/a/XZEOk1kGtFlhvRrzQLAphG85Y
+- brain-gcd asciinema: https://asciinema.org/a/GEveFYacs7L5kTJgq8YKtFgzQ
+
 
 
