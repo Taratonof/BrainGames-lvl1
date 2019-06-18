@@ -1,7 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { greetingGame, startGame } from '..';
-
-const randomInt = () => parseInt(Math.random() * 100, 10);
+import { greetingGame, startGame, randomInt } from '..';
 
 const even = number => number % 2 === 0;
 

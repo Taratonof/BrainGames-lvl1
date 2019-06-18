@@ -1,7 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { greetingGame, startGame } from '..';
-
-const randomInt = () => Math.floor(Math.random() * 100);
+import { greetingGame, startGame, randomInt } from '..';
 
 const randomIntArray = arr => Math.floor(Math.random() * arr.length);
 

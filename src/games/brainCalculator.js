@@ -14,9 +14,13 @@ const pairArr = [
   cons('64 - 51', '13'),
   cons('23 - 9', '14')];
 
-const rand = () => Math.floor(Math.random() * pairArr.length);
+const randIndexArray = arr => Math.floor(Math.random() * arr.length);
 
 export default () => {
   const name = greetingGame('What is the result of the expression?');
-  console.log(startGame(pairArr[rand()], pairArr[rand()], pairArr[rand()], name));
+  console.log(startGame(
+    pairArr[randIndexArray(pairArr)],
+    pairArr[randIndexArray(pairArr)],
+    pairArr[randIndexArray(pairArr)], name,
+  ));
 };

@@ -13,6 +13,8 @@ export const greetingGame = (str) => {
   return name;
 };
 
+export const randomInt = () => Math.floor(Math.random() * 1000);
+
 export const startGame = (pair1, pair2, pair3, name) => {
   const pairArray = [pair1, pair2, pair3];
   for (let i = 0; i < 3; i += 1) {

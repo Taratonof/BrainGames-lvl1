@@ -1,7 +1,5 @@
 import { cons } from 'hexlet-pairs';
-import { greetingGame, startGame } from '..';
-
-const randomInt = () => Math.floor(Math.random() * 1000);
+import { greetingGame, startGame, randomInt } from '..';
 
 const prime = (number) => {
   if ((number % 2 === 0) && (number !== 2)) {
