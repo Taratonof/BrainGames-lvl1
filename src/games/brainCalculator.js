@@ -1,26 +1,29 @@
 import { cons } from 'hexlet-pairs';
-import { greetingGame, startGame } from '..';
+import startGame from '..';
+import { randomInt, randIndexArray } from '../gameFunctions';
 
-const pairArr = [
-  cons('3 + 5', '8'),
-  cons('7 + 4', '11'),
-  cons('43 + 23', '66'),
-  cons('9 * 9', '81'),
-  cons('12 * 3', '36'),
-  cons('7 * 2', '14'),
-  cons('21 * 4', '84'),
-  cons('9 - 5', '4'),
-  cons('137 - 45', '92'),
-  cons('64 - 51', '13'),
-  cons('23 - 9', '14')];
+const gameCalculator = () => {
+  const operations = ['+', '-', '*'];
+  const firstNumber = randomInt();
+  const secondNumber = randomInt();
+  const matOperation = operations[randIndexArray(operations)];
+  let correctAnswer;
 
-const randIndexArray = arr => Math.floor(Math.random() * arr.length);
-
-export default () => {
-  const name = greetingGame('What is the result of the expression?');
-  console.log(startGame(
-    pairArr[randIndexArray(pairArr)],
-    pairArr[randIndexArray(pairArr)],
-    pairArr[randIndexArray(pairArr)], name,
-  ));
+  switch (matOperation) {
+    case '+':
+      correctAnswer = firstNumber + secondNumber;
+      break;
+    case '-':
+      correctAnswer = firstNumber - secondNumber;
+      break;
+    case '*':
+      correctAnswer = firstNumber * secondNumber;
+      break;
+    default:
+      break;
+  }
+  const gamePair = cons(`${firstNumber} ${matOperation} ${secondNumber}`, correctAnswer);
+  return gamePair;
 };
+
+export default () => startGame(gameCalculator, 'What is the result of the expression?');

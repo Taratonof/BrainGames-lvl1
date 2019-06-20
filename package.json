@@ -11,7 +11,10 @@
   "files": [
     "dist"
   ],
-  "main": "index.js",
+  "description": "Сборник мини игр",
+  "keywords": [
+    "hexlet project", "brain-games"
+  ],
   "scripts": {
     "babel-node": "babel-node",
     "prepublishOnly": "npm run build",
