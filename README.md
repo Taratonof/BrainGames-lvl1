@@ -5,7 +5,7 @@
 
 Данный проект это сборник мини-игр.
 
-- Установка проекта: введите в терминале команду "npm install braingameslimited -g". Пример https://asciinema.org/a/SyIBFxTNxM965FaQfehjhSve6
+- Установка проекта: введите в терминале команду "npm install braingameslimited -g". Пример сеанса игры https://asciinema.org/a/SyIBFxTNxM965FaQfehjhSve6
 
 - Игра brain-even: игра в которой нужно ответить является ли заданное число чётным. Для начала игры введите в терминале команду "brain-even". Пример сеанса игры https://asciinema.org/a/OXfj9DIvdoOBbAfwTjIQzK9E9
 
