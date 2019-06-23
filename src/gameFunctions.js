@@ -1,2 +1,3 @@
-export const randomInt = () => Math.floor(Math.random() * 1000);
-export const randIndexArray = arr => Math.floor(Math.random() * arr.length);
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+export default getRandomInt;

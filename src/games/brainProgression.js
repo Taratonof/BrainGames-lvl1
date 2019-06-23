@@ -1,26 +1,28 @@
 import { cons } from 'hexlet-pairs';
-import startGame from '..';
-import { randomInt, randIndexArray } from '../gameFunctions';
+import playGame from '..';
+import getRandomInt from '../gameFunctions';
 
-const randomProgression = () => {
-  const pgNumber = randomInt();
-  let acc = randomInt();
-  const pgArray = [];
-  const progressionLength = 10;
-  for (let i = 0; i < progressionLength; i += 1) {
-    pgArray.push(acc);
-    acc += pgNumber;
+const gameInstruction = 'What number is missing in the progression?';
+
+const getRandomProgression = () => {
+  const numberProgression = getRandomInt(0, 10000);
+  let acc = getRandomInt(0, 10000);
+  const progressionAcc = [];
+  const progressionLengthCount = 10;
+  for (let i = 0; i < progressionLengthCount; i += 1) {
+    progressionAcc.push(acc);
+    acc += numberProgression;
   }
-  return pgArray;
+  return progressionAcc;
 };
 
-const gameProgression = () => {
-  const progression = randomProgression();
-  const deleteNumber = randIndexArray(progression);
-  const winData = progression[deleteNumber];
-  progression[deleteNumber] = '..';
-  const gamePair = cons(progression.join(' '), `${winData}`);
-  return gamePair;
+const initializationGameProgression = () => {
+  const progression = getRandomProgression();
+  const indexToDelete = getRandomInt(0, progression.length - 1);
+  const numberToDelete = progression[indexToDelete];
+  progression[indexToDelete] = '..';
+  const dataGame = cons(progression.join(' '), `${numberToDelete}`);
+  return dataGame;
 };
 
-export default () => startGame(gameProgression, 'What number is missing in the progression?');
+export default () => playGame(initializationGameProgression, gameInstruction);

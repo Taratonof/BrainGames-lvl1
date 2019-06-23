@@ -1,29 +1,32 @@
 import { cons } from 'hexlet-pairs';
-import startGame from '..';
-import { randomInt, randIndexArray } from '../gameFunctions';
+import playGame from '..';
+import getRandomInt from '../gameFunctions';
 
-const gameCalculator = () => {
-  const operations = ['+', '-', '*'];
-  const firstNumber = randomInt();
-  const secondNumber = randomInt();
-  const matOperation = operations[randIndexArray(operations)];
+const gameInstruction = 'What is the result of the expression?';
+
+const operations = ['+', '-', '*'];
+
+const initializationGameCalculator = () => {
+  const numberOfTheQuestionOne = getRandomInt(0, 10000);
+  const numberOfTheQuestionTwo = getRandomInt(0, 10000);
+  const operation = operations[getRandomInt(0, operations.length - 1)];
   let correctAnswer;
 
-  switch (matOperation) {
+  switch (operation) {
     case '+':
-      correctAnswer = firstNumber + secondNumber;
+      correctAnswer = numberOfTheQuestionOne + numberOfTheQuestionTwo;
       break;
     case '-':
-      correctAnswer = firstNumber - secondNumber;
+      correctAnswer = numberOfTheQuestionOne - numberOfTheQuestionTwo;
       break;
     case '*':
-      correctAnswer = firstNumber * secondNumber;
+      correctAnswer = numberOfTheQuestionOne * numberOfTheQuestionTwo;
       break;
     default:
       break;
   }
-  const gamePair = cons(`${firstNumber} ${matOperation} ${secondNumber}`, correctAnswer);
-  return gamePair;
+  const dataGame = cons(`${numberOfTheQuestionOne} ${operation} ${numberOfTheQuestionTwo}`, correctAnswer);
+  return dataGame;
 };
 
-export default () => startGame(gameCalculator, 'What is the result of the expression?');
+export default () => playGame(initializationGameCalculator, gameInstruction);
