@@ -6,10 +6,12 @@ const gameInstruction = 'Answer "yes" if number even otherwise answer "no".';
 
 const isEven = number => number % 2 === 0;
 
-const initializationGameEven = () => {
-  const numberOfTheQuestion = getRandomInt(0, 10000);
-  const dataGame = cons(numberOfTheQuestion, isEven(numberOfTheQuestion) ? 'yes' : 'no');
-  return dataGame;
+const creationRoundData = (questionArg) => {
+  const question = questionArg;
+  const roundData = cons(question, isEven(question) ? 'yes' : 'no');
+  return roundData;
 };
 
-export default () => playGame(initializationGameEven, gameInstruction);
+const generationRound = () => creationRoundData(getRandomInt(0, 10000));
+
+export default () => playGame(generationRound, gameInstruction);

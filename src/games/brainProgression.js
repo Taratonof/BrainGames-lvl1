@@ -4,25 +4,30 @@ import getRandomInt from '../gameFunctions';
 
 const gameInstruction = 'What number is missing in the progression?';
 
-const getRandomProgression = () => {
-  const numberProgression = getRandomInt(0, 10000);
-  let acc = getRandomInt(0, 10000);
+const progressionLengthCount = 10;
+
+const getRandomProgression = (progressionStep, acc, progressionLength) => {
   const progressionAcc = [];
-  const progressionLengthCount = 10;
-  for (let i = 0; i < progressionLengthCount; i += 1) {
-    progressionAcc.push(acc);
-    acc += numberProgression;
+  let accum = acc;
+  for (let i = 0; i < progressionLength; i += 1) {
+    progressionAcc.push(accum);
+    accum += progressionStep;
   }
   return progressionAcc;
 };
 
-const initializationGameProgression = () => {
-  const progression = getRandomProgression();
+const creationRoundData = (progressionArg) => {
+  const progression = progressionArg;
   const indexToDelete = getRandomInt(0, progression.length - 1);
-  const numberToDelete = progression[indexToDelete];
+  const elementToDelete = progression[indexToDelete];
   progression[indexToDelete] = '..';
-  const dataGame = cons(progression.join(' '), `${numberToDelete}`);
-  return dataGame;
+  const roundData = cons(progression.join(' '), `${elementToDelete}`);
+  return roundData;
 };
 
-export default () => playGame(initializationGameProgression, gameInstruction);
+const generationRound = () => creationRoundData(
+  getRandomProgression(getRandomInt(0, 10000),
+    getRandomInt(0, 10000), progressionLengthCount),
+);
+
+export default () => playGame(generationRound, gameInstruction);

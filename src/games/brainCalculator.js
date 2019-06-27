@@ -6,27 +6,30 @@ const gameInstruction = 'What is the result of the expression?';
 
 const operations = ['+', '-', '*'];
 
-const initializationGameCalculator = () => {
-  const numberOfTheQuestionOne = getRandomInt(0, 10000);
-  const numberOfTheQuestionTwo = getRandomInt(0, 10000);
-  const operation = operations[getRandomInt(0, operations.length - 1)];
+const getOperation = () => operations[getRandomInt(0, operations.length - 1)];
+
+const creationRoundData = (num1, num2, operation) => {
   let correctAnswer;
 
   switch (operation) {
     case '+':
-      correctAnswer = numberOfTheQuestionOne + numberOfTheQuestionTwo;
+      correctAnswer = num1 + num2;
       break;
     case '-':
-      correctAnswer = numberOfTheQuestionOne - numberOfTheQuestionTwo;
+      correctAnswer = num1 - num2;
       break;
     case '*':
-      correctAnswer = numberOfTheQuestionOne * numberOfTheQuestionTwo;
+      correctAnswer = num1 * num2;
       break;
     default:
       break;
   }
-  const dataGame = cons(`${numberOfTheQuestionOne} ${operation} ${numberOfTheQuestionTwo}`, correctAnswer);
-  return dataGame;
+  const roundData = cons(`${num1} ${operation} ${num2}`, correctAnswer);
+  return roundData;
 };
 
-export default () => playGame(initializationGameCalculator, gameInstruction);
+const generationRound = () => creationRoundData(
+  getRandomInt(0, 10000), getRandomInt(0, 10000), getOperation(),
+);
+
+export default () => playGame(generationRound, gameInstruction);

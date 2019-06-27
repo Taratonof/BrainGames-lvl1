@@ -4,19 +4,19 @@ import getRandomInt from '../gameFunctions';
 
 const gameInstruction = 'Find the greatest common divisor of given numbers.';
 
-const gcd = (n, m) => {
+const greatestCommonDivisor = (n, m) => {
   if (m > 0) {
     const module = n % m;
-    return gcd(m, module);
+    return greatestCommonDivisor(m, module);
   }
   return Math.abs(n);
 };
 
-const initializationGameGcd = () => {
-  const numberOfTheQuestionOne = getRandomInt(0, 10000);
-  const numberOfTheQuestionTwo = getRandomInt(0, 10000);
-  const dataGame = cons(`${numberOfTheQuestionOne} ${numberOfTheQuestionTwo}`, gcd(numberOfTheQuestionOne, numberOfTheQuestionTwo));
-  return dataGame;
+const creationRoundData = (num1, num2) => {
+  const roundData = cons(`${num1} ${num2}`, greatestCommonDivisor(num1, num2));
+  return roundData;
 };
 
-export default () => playGame(initializationGameGcd, gameInstruction);
+const generationRound = () => creationRoundData(getRandomInt(0, 10000), getRandomInt(0, 10000));
+
+export default () => playGame(generationRound, gameInstruction);

@@ -8,15 +8,15 @@ const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
-  if ((number % 2 === 0) && (number !== 2)) {
-    return false;
-  }
   if (number === 2) {
     return true;
   }
-  const numberActualOfTheCheck = Math.round(Math.sqrt(number));
+  if (number % 2 === 0) {
+    return false;
+  }
+  const actualOfTheCheck = Math.round(Math.sqrt(number));
 
-  for (let i = 2; i < numberActualOfTheCheck + 1; i += 1) {
+  for (let i = 2; i < actualOfTheCheck + 1; i += 1) {
     if (number % i === 0) {
       return false;
     }
@@ -24,10 +24,11 @@ const isPrime = (number) => {
   return true;
 };
 
-const initializationGamePrime = () => {
-  const numberOfTheQuestion = getRandomInt(0, 1000);
-  const dataGame = cons(numberOfTheQuestion, isPrime(numberOfTheQuestion) ? 'yes' : 'no');
-  return dataGame;
+const creationRoundData = (question) => {
+  const roundData = cons(question, isPrime(question) ? 'yes' : 'no');
+  return roundData;
 };
 
-export default () => playGame(initializationGamePrime, gameInstruction);
+const generationRound = () => creationRoundData(getRandomInt(0, 1000));
+
+export default () => playGame(generationRound, gameInstruction);
