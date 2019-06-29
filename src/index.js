@@ -3,7 +3,7 @@ import { car, cdr } from 'hexlet-pairs';
 
 const roundsCount = 3;
 
-export default (generationRound, instruction) => {
+export default (generateRound, instruction) => {
   console.log('Welcome to the Brain Games!');
   console.log(instruction);
   console.log('');
@@ -11,15 +11,16 @@ export default (generationRound, instruction) => {
   console.log(`Hello, ${name}!`);
   console.log('');
   for (let i = 0; i < roundsCount; i += 1) {
-    const round = generationRound();
-    const condition = car(round);
-    console.log(`Question: ${condition}`);
-    const correctAnswer = `${cdr(round)}`;
+    const roundData = generateRound();
+    const question = car(roundData);
+    console.log(`Question: ${question}`);
+    const correctAnswer = `${cdr(roundData)}`;
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
