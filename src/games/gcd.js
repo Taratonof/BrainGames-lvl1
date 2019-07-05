@@ -9,7 +9,7 @@ const greatestCommonDivisor = (n, m) => {
     const module = n % m;
     return greatestCommonDivisor(m, module);
   }
-  return Math.abs(n);
+  return n;
 };
 
 const generateRound = () => {
