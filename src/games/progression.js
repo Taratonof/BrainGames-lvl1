@@ -6,10 +6,10 @@ const gameInstruction = 'What number is missing in the progression?';
 
 const progressionLength = 10;
 
-const getProgression = (progressionStep, startingValue, length) => {
+const getProgression = (step, init, length) => {
   const progression = [];
   for (let i = 0; i < length; i += 1) {
-    progression.push(startingValue + progressionStep * i);
+    progression.push(init + step * i);
   }
   return progression;
 };
