@@ -29,8 +29,9 @@ const generateRound = () => {
   const num1 = getRandomInteger(0, 10000);
   const num2 = getRandomInteger(0, 10000);
   const operation = operations[getRandomInteger(0, operations.length - 1)];
+  const question = `${num1} ${operation} ${num2}`;
   const correctAnswer = getCorrectAnswer(num1, num2, operation);
-  const roundData = cons(`${num1} ${operation} ${num2}`, correctAnswer);
+  const roundData = cons(question, correctAnswer);
   return roundData;
 };
 

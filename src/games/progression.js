@@ -8,16 +8,16 @@ const progressionLength = 10;
 
 const getProgression = (progressionStep, startingValue, length) => {
   const progression = [];
-  for (let i = 1; i <= length; i += 1) {
+  for (let i = 0; i < length; i += 1) {
     progression.push(startingValue + progressionStep * i);
   }
   return progression;
 };
 
 const generateRound = () => {
-  const progressionStep = getRandomInteger(0, 10000);
-  const startingValue = getRandomInteger(0, 10000);
-  const progression = getProgression(progressionStep, startingValue, progressionLength);
+  const step = getRandomInteger(0, 10000);
+  const init = getRandomInteger(0, 10000);
+  const progression = getProgression(step, init, progressionLength);
   const hiddenElementIndex = getRandomInteger(0, progression.length - 1);
   const question = progression[hiddenElementIndex];
   progression[hiddenElementIndex] = '..';

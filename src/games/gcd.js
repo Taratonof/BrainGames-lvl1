@@ -15,7 +15,9 @@ const greatestCommonDivisor = (n, m) => {
 const generateRound = () => {
   const num1 = getRandomInteger(0, 10000);
   const num2 = getRandomInteger(0, 10000);
-  const roundData = cons(`${num1} ${num2}`, greatestCommonDivisor(num1, num2));
+  const question = `${num1} ${num2}`;
+  const correctAnswer = greatestCommonDivisor(num1, num2);
+  const roundData = cons(question, correctAnswer);
   return roundData;
 };
 
