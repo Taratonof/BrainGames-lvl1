@@ -3,9 +3,9 @@
 
 - <a href="https://travis-ci.org/Taratonof/frontend-project-lvl1"><img src="https://travis-ci.org/Taratonof/frontend-project-lvl1.svg?branch=master" /></a>
 
-Данный проект это сборник мини-игр.
+Данное приложение это сборник мини-игр.
 
-- Установка проекта: введите в терминале команду "npm install braingameslimited -g". Пример установки https://asciinema.org/a/SyIBFxTNxM965FaQfehjhSve6
+- Установка приложения: введите в терминале команду "npm install braingameslimited -g". Пример установки https://asciinema.org/a/SyIBFxTNxM965FaQfehjhSve6
 
 - Игра brain-even: игра в которой нужно ответить является ли заданное число чётным. Для начала игры введите в терминале команду "brain-even". Пример сеанса игры https://asciinema.org/a/OXfj9DIvdoOBbAfwTjIQzK9E9
 
